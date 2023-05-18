@@ -32,6 +32,7 @@ var console = bufio.NewReader(os.Stdin)
 
 func init() {
 	wrapper.DandelionEnergy = energy
+	wrapper.FekitGetSign = getSign
 }
 
 func readLine() (str string) {
@@ -302,4 +303,28 @@ func energy(uin uint64, id string, appVersion string, salt []byte) ([]byte, erro
 	}
 	log.Debugf("t544 sign result: %x", sign)
 	return sign, nil
+}
+
+func getSign(seq uint64, uin string, commandName string, qua string, body []byte) ([]byte, []byte, []byte, error) {
+	signServer := "http://111.173.82.27:7777/api/8950/sign?account=123456"
+	response, err := download.Request{
+		Method: http.MethodPost,
+		URL:    signServer,
+		Header: map[string]string{"Content-Type": "application/json"},
+		Body:   bytes.NewReader([]byte(fmt.Sprintf(`{"uin":%s,"cmd":"%s","wupBuffer":"%s","qua":"%s","ssoSeq":%d}`, uin, commandName, hex.EncodeToString(body), qua, seq))),
+	}.Bytes()
+	//log.Debugf(fmt.Sprintf(`{"uin":%s,"cmd":"%s","wupBuffer":"%s","qua":"%s","ssoSeq":%d}`, uin, commandName, hex.EncodeToString(body), qua, seq))
+	if err != nil {
+		log.Errorf("获取getSign1时出现问题: %v", err)
+		return nil, nil, nil, err
+	}
+	sign, err := hex.DecodeString(gjson.GetBytes(response, "sign").String())
+	extra, err := hex.DecodeString(gjson.GetBytes(response, "extra").String())
+	token, err := hex.DecodeString(gjson.GetBytes(response, "token").String())
+	if err != nil || len(sign) == 0 {
+		log.Errorf("获取getSign2时出现问题: %v", err)
+		return nil, nil, nil, err
+	}
+	log.Debugf("getsign result: %x", sign)
+	return sign, extra, token, nil
 }
