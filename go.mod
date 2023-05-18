@@ -1,11 +1,11 @@
-module github.com/Mrs4s/go-cqhttp
+module github.com/6DDUU6/go-cqhttp
 
 go 1.20
 
 require (
 	github.com/FloatTech/sqlite v1.5.7
 	github.com/Microsoft/go-winio v0.6.0
-	github.com/Mrs4s/MiraiGo v0.0.0-20230401072048-f8d9841755b5
+	github.com/6DDUU6/MiraiGo v0.0.0-20230401072048-d155b04ff238
 	github.com/RomiChan/syncx v0.0.0-20221202055724-5f842c53020e
 	github.com/RomiChan/websocket v1.4.3-0.20220123145318-307a86b127bc
 	github.com/fumiama/go-base16384 v1.6.1

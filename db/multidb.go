@@ -4,7 +4,7 @@ import (
 	"github.com/pkg/errors"
 	"gopkg.in/yaml.v3"
 
-	"github.com/Mrs4s/go-cqhttp/internal/base"
+	"github.com/6DDUU6/go-cqhttp/internal/base"
 )
 
 // backends 多数据库支持， 后端支持

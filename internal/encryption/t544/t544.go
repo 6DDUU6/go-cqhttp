@@ -8,7 +8,7 @@ import (
 	"encoding/binary"
 	"math/rand"
 
-	"github.com/Mrs4s/go-cqhttp/internal/encryption"
+	"github.com/6DDUU6/go-cqhttp/internal/encryption"
 )
 
 const (

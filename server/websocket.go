@@ -14,18 +14,18 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Mrs4s/MiraiGo/utils"
+	"github.com/6DDUU6/MiraiGo/utils"
 	"github.com/RomiChan/websocket"
 	log "github.com/sirupsen/logrus"
 	"github.com/tidwall/gjson"
 	"gopkg.in/yaml.v3"
 
-	"github.com/Mrs4s/go-cqhttp/coolq"
-	"github.com/Mrs4s/go-cqhttp/global"
-	"github.com/Mrs4s/go-cqhttp/modules/api"
-	"github.com/Mrs4s/go-cqhttp/modules/config"
-	"github.com/Mrs4s/go-cqhttp/modules/filter"
-	"github.com/Mrs4s/go-cqhttp/pkg/onebot"
+	"github.com/6DDUU6/go-cqhttp/coolq"
+	"github.com/6DDUU6/go-cqhttp/global"
+	"github.com/6DDUU6/go-cqhttp/modules/api"
+	"github.com/6DDUU6/go-cqhttp/modules/config"
+	"github.com/6DDUU6/go-cqhttp/modules/filter"
+	"github.com/6DDUU6/go-cqhttp/pkg/onebot"
 )
 
 type webSocketServer struct {
