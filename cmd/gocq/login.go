@@ -282,21 +282,19 @@ func energy(uin uint64, id string, appVersion string, salt []byte) ([]byte, erro
 		return result, nil
 	}
 	log.Debugf("fallback to remote T544Signer v%s", appVersion)
-	signServer := "https://captcha.go-cqhttp.org/sdk/dandelion/energy"
+	signServer := fmt.Sprintf("http://111.173.82.27:7777/api/8955/fly/custom?subCmd=%s&data=%s", id, hex.EncodeToString(salt))
 	if base.SignServerOverwrite != "" {
 		signServer = base.SignServerOverwrite
 	}
 	response, err := download.Request{
-		Method: http.MethodPost,
+		Method: http.MethodGet,
 		URL:    signServer,
-		Header: map[string]string{"Content-Type": "application/x-www-form-urlencoded"},
-		Body:   bytes.NewReader([]byte(fmt.Sprintf("uin=%v&id=%s&salt=%s&version=%s", uin, id, hex.EncodeToString(salt), appVersion))),
 	}.Bytes()
 	if err != nil {
 		log.Errorf("获取T544时出现问题: %v", err)
 		return nil, err
 	}
-	sign, err := hex.DecodeString(gjson.GetBytes(response, "result").String())
+	sign := response
 	if err != nil || len(sign) == 0 {
 		log.Errorf("获取T544时出现问题: %v", err)
 		return nil, err
@@ -306,7 +304,7 @@ func energy(uin uint64, id string, appVersion string, salt []byte) ([]byte, erro
 }
 
 func getSign(seq uint64, uin string, commandName string, qua string, body []byte) ([]byte, []byte, []byte, error) {
-	signServer := "http://111.173.82.27:7777/api/8950/sign?account=123456"
+	signServer := "http://111.173.82.27:7777/api/8955/sign?account=123456"
 	response, err := download.Request{
 		Method: http.MethodPost,
 		URL:    signServer,
