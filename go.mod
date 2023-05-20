@@ -3,7 +3,7 @@ module github.com/6DDUU6/go-cqhttp
 go 1.20
 
 require (
-	github.com/6DDUU6/MiraiGo v0.0.0-20230518104818-d155b04ff238
+	github.com/6DDUU6/MiraiGo v0.0.0-20230520101811-f853cdb26dc6
 	github.com/FloatTech/sqlite v1.5.7
 	github.com/Microsoft/go-winio v0.6.0
 	github.com/RomiChan/syncx v0.0.0-20221202055724-5f842c53020e

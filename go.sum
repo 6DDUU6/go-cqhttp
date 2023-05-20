@@ -2,6 +2,8 @@ github.com/6DDUU6/MiraiGo v0.0.0-20230401072048-f8d9841755b5 h1:IJqIBP7/c0o4+H7+
 github.com/6DDUU6/MiraiGo v0.0.0-20230401072048-f8d9841755b5/go.mod h1:mU3fBFU+7eO0kaGes7YRKtzIDtwIU84nSSwTV7NK2b0=
 github.com/6DDUU6/MiraiGo v0.0.0-20230518104818-d155b04ff238 h1:Ei4QbgCTXvuk2RODgj2XAbY83m/THhDoR6Z1Y1m+lHM=
 github.com/6DDUU6/MiraiGo v0.0.0-20230518104818-d155b04ff238/go.mod h1:5etqIT86IFC1IHtZIRSVhzjzMBhHGmpFFbt81uHtZjI=
+github.com/6DDUU6/MiraiGo v0.0.0-20230520101811-f853cdb26dc6 h1:R1fHRHNkVJJgchOy69ie4fUH2z5dPtR93jRCiGXR2WU=
+github.com/6DDUU6/MiraiGo v0.0.0-20230520101811-f853cdb26dc6/go.mod h1:5etqIT86IFC1IHtZIRSVhzjzMBhHGmpFFbt81uHtZjI=
 github.com/FloatTech/sqlite v1.5.7 h1:Bvo4LSojcZ6dVtbHrkqvt6z4v8e+sj0G5PSUIvdawsk=
 github.com/FloatTech/sqlite v1.5.7/go.mod h1:zFbHzRfB+CJ+VidfjuVbrcin3DAz283F7hF1hIeHzpY=
 github.com/FloatTech/ttl v0.0.0-20220715042055-15612be72f5b h1:tvciXWq2nuvTbFeJGLDNIdRX3BI546D3O7k7vrVueZw=

@@ -33,6 +33,7 @@ var console = bufio.NewReader(os.Stdin)
 func init() {
 	wrapper.DandelionEnergy = energy
 	wrapper.FekitGetSign = getSign
+	wrapper.AllowSignSendMsg = 
 }
 
 func readLine() (str string) {
@@ -325,4 +326,10 @@ func getSign(seq uint64, uin string, commandName string, qua string, body []byte
 	}
 	log.Debugf("getsign result: %x", sign)
 	return sign, extra, token, nil
+}
+
+// 这个函数不知道写在哪，先写这好了
+func AllowSignSendMsg() (bool) {
+	// TODO:检测消息发送被风控自动开启
+	return base.SignSendMsg
 }

@@ -38,6 +38,7 @@ var (
 	FastStart           bool   // 是否为快速启动
 	AllowTempSession    bool   // 是否允许发送临时会话信息
 	UpdateProtocol      bool   // 是否更新协议
+	SignSendMsg         bool   // 是否签名发送消息
 	SignServerOverwrite string // 使用特定的服务器进行签名
 	HTTPTimeout         int
 
@@ -64,6 +65,7 @@ func Parse() {
 	d := flag.Bool("D", false, "debug mode")
 	flag.BoolVar(&FastStart, "faststart", false, "skip waiting 5 seconds")
 	flag.BoolVar(&UpdateProtocol, "update-protocol", false, "update protocol")
+	flag.BoolVar(&SignSendMsg, "sign-sendmsg", false, "sign sendmsg")
 	flag.StringVar(&SignServerOverwrite, "sign-server", "", "use special server to sign tlv")
 	flag.Parse()
 
